@@ -6,21 +6,20 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import org.springframework.data.annotation.Id;
-
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.Date;
+import java.util.List;
 
-
-@Document("question")
+@Document("option")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class Question {
+public class Option {
     @Id
     private String id;
-    private String question_text;
-    private String answer_text;
-    private Date created_at;
+
+    private String optionText;
+    private boolean isCorrect;
 }
